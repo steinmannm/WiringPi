@@ -765,11 +765,13 @@ int piGpioLayout (void)
     if (strncmp (line, "Hardware", 8) == 0)
       break ;
 
+#ifdef DONT_CARE_ANYMORE
   if (strncmp (line, "Hardware", 8) != 0)
     piGpioLayoutOops ("No \"Hardware\" line") ;
 
   if (wiringPiDebug)
     printf ("piGpioLayout: Hardware: %s\n", line) ;
+#endif
 
 // See if it's BCM2708 or BCM2709 or the new BCM2835.
 
